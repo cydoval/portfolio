@@ -1,27 +1,41 @@
-##UC Davis CAES CRU Web Dev
+# Cal Doval
 
+Personal site for [cydoval.com](https://cydoval.com), now built with React,
+Vite, Tailwind CSS, and DaisyUI.
 
-Author: Cal Doval cydoval@ucdavis.edu
-Website: Jekyll-starter.ucdavis.edu
+## Cloudflare Pages
 
-This project is built using Jekyll - please use http://jekyllrb.com/ for installation
+Use these settings when connecting the repo in Cloudflare Pages:
 
-Once Jekyll is installed and you are in the folder within terminal use jekyll serve to set up a localhost. Pushes to the 'gh-pages' branch will push to jekyll-ucdavis.edu
+- Framework preset: Vite
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Node version: `22`
 
-Gems
-	Sitemap
-	Github Pages
+Custom domain routing for `cydoval.com` should be managed in Cloudflare Pages.
 
-Vendors:
-	Bootstrap
-		- Affix
-		- Panels
-		- Modal
-	Search
-		- Lunr.js
-	Slider
-		- Nivoslider
-	Navigation
-		- Pushy
-	Lightbox
-		- Featherlight
+## Development
+
+Install dependencies:
+
+```sh
+npm install
+```
+
+Start the local development server:
+
+```sh
+npm run dev
+```
+
+Build the production site:
+
+```sh
+npm run build
+```
+
+Preview the production build:
+
+```sh
+npm run preview
+```

@@ -1,31 +1,49 @@
----
-layout: default
----
-
-<div class="landing__wrapper">
-  <div class="left-col">
-    <img src="/media/logo_dark.svg" alt="wordmark for Cal Doval" />
-    <p class="lead">
-      My name is Cal Doval.<br />
-      I create websites, develop brands, and manage content <br />
-      for
-      <a href="https://computing.caes.ucdavis.edu/portfolio"
-        >UC Davis College of Agricultural and Environmental Sciences</a
-      ><br />
-      and occasionally other companies.
-    </p>
-    <div class="cta">
-      <a href="https://github.com/cydoval"
-        ><i class="fa fa-github" aria-hidden="true"></i
-      ></a>
-      <!-- <a href="https://dribbble.com/cydoval"><i class="fa fa-dribbble" aria-hidden="true"></i></a> -->
-    </div>
-  </div>
-  <div class="right-col">
-    <img
-      width="50%"
-      src="/media/cal2x.png"
-      alt="graphic representation of Cal"
+<!doctype html>
+<html lang="en" data-theme="caldoval">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="subject" content="Web Design and Development" />
+    <meta name="classification" content="Web Development" />
+    <meta name="author" content="Cal Doval" />
+    <meta name="designer" content="Cal Doval" />
+    <meta name="reply-to" content="cydoval" />
+    <meta name="theme-color" content="#22274D" />
+    <meta
+      name="description"
+      content="Cal Doval creates websites, develops brands, and manages content for UC Davis CAES and occasional collaborators."
     />
-  </div>
-</div>
+    <meta property="og:title" content="Cal Doval" />
+    <meta
+      property="og:description"
+      content="Websites, brands, and content by Cal Doval."
+    />
+    <meta property="og:image" content="/media/thumbnail.jpg" />
+    <link rel="image_src" href="/media/thumbnail.jpg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/media/thumbnail.jpg" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/media/76-icon.jpg" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/media/120-icon.jpg" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/media/152-icon.jpg" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/media/192-icon.jpg" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/media/512-icon.jpg" />
+    <link rel="canonical" href="https://cydoval.com/" />
+    <title>Cal Doval</title>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2RDD4S7EX2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-2RDD4S7EX2");
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

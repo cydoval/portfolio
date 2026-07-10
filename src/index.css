@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "fira_reg";
+  src:
+    url("/media/fonts/FiraSans-Regular.woff") format("woff"),
+    url("/media/fonts/FiraSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "fira_light";
+  src:
+    url("/media/fonts/FiraSans-Light.woff") format("woff"),
+    url("/media/fonts/FiraSans-Light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "fira_bold";
+  src:
+    url("/media/fonts/FiraSans-Medium.woff") format("woff"),
+    url("/media/fonts/FiraSans-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    min-width: 320px;
+    font-family: "fira_reg", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  ::selection {
+    background: rgba(201, 151, 0, 0.28);
+  }
+}

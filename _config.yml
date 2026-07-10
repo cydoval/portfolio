@@ -10,7 +10,7 @@ replyto: cydoval
 themecolor: 22274d
 repo: "https://github.com/cydoval/"
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://cydoval.com" # the base hostname & protocol for your site
+url: "https://cydoval.com" # the base hostname & protocol for your site
 
 permalink: pretty
 
