@@ -1,35 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+
+@theme {
+  --font-sans: "Fira Sans", Arial, sans-serif;
+  --shadow-soft: 0 24px 60px rgba(33, 37, 45, 0.08);
+  --color-main-border: #dfdfdf;
+  --main-border: var(--color-main-border);
+}
 
 @font-face {
-  font-family: "fira_reg";
+  font-family: "Fira Sans";
   src:
     url("/media/fonts/FiraSans-Regular.woff") format("woff"),
     url("/media/fonts/FiraSans-Regular.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "fira_light";
-  src:
-    url("/media/fonts/FiraSans-Light.woff") format("woff"),
-    url("/media/fonts/FiraSans-Light.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "fira_bold";
-  src:
-    url("/media/fonts/FiraSans-Medium.woff") format("woff"),
-    url("/media/fonts/FiraSans-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 
 @layer base {
+  :root,
+  [data-theme="caldoval"] {
+    color-scheme: light;
+    --color-primary: oklch(48.7247% 0.138411 45.379);
+    --color-primary-content: oklch(89.7449% 0.027682 45.379);
+    --color-secondary: oklch(70.4686% 0.144463 84.7961);
+    --color-secondary-content: oklch(14.0937% 0.028893 84.7961);
+    --color-accent: oklch(28.9375% 0.069178 275.557);
+    --color-accent-content: oklch(85.7875% 0.013836 275.557);
+    --color-neutral: oklch(26.3924% 0.016089 264.249);
+    --color-neutral-content: oklch(85.2785% 0.003218 264.249);
+    --color-base-100: #fbfbfb;
+    --color-base-200: oklch(95.6717% 0.005156 247.878);
+    --color-base-300: oklch(89.8806% 0.010992 256.699);
+    --color-base-content: #1e2024;
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+  }
+
   html {
     min-width: 320px;
-    font-family: "fira_reg", Arial, sans-serif;
+    font-family: "Fira Sans", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -45,5 +64,23 @@
 
   ::selection {
     background: rgba(201, 151, 0, 0.28);
+  }
+}
+
+@layer components {
+  .blueprint-page {
+    --blueprint-node-size: 0.62rem;
+    --blueprint-top-guide: clamp(3.25rem, 9svh, 4.3rem);
+    --blueprint-bottom-guide: clamp(7.5rem, 18svh, 8.75rem);
+    --blueprint-gutter: clamp(1.3rem, 2.4vw, 1.9rem);
+    --blueprint-logo-size: clamp(1.55rem, 2.4vw, 1.75rem);
+  }
+
+  @media (max-width: 640px) {
+    .blueprint-page {
+      --blueprint-top-guide: 2.1rem;
+      --blueprint-bottom-guide: 4.4rem;
+      --blueprint-gutter: 1rem;
+    }
   }
 }
