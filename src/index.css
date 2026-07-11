@@ -6,7 +6,7 @@
 @theme {
   --font-sans: "Fira Sans", Arial, sans-serif;
   --shadow-soft: 0 24px 60px rgba(33, 37, 45, 0.08);
-  --color-main-border: #dfdfdf;
+  --color-main-border: #33302a;
   --main-border: var(--color-main-border);
 }
 
@@ -23,19 +23,19 @@
 @layer base {
   :root,
   [data-theme="caldoval"] {
-    color-scheme: light;
-    --color-primary: oklch(48.7247% 0.138411 45.379);
-    --color-primary-content: oklch(89.7449% 0.027682 45.379);
-    --color-secondary: oklch(70.4686% 0.144463 84.7961);
-    --color-secondary-content: oklch(14.0937% 0.028893 84.7961);
-    --color-accent: oklch(28.9375% 0.069178 275.557);
-    --color-accent-content: oklch(85.7875% 0.013836 275.557);
-    --color-neutral: oklch(26.3924% 0.016089 264.249);
-    --color-neutral-content: oklch(85.2785% 0.003218 264.249);
-    --color-base-100: #fbfbfb;
-    --color-base-200: oklch(95.6717% 0.005156 247.878);
-    --color-base-300: oklch(89.8806% 0.010992 256.699);
-    --color-base-content: #1e2024;
+    color-scheme: dark;
+    --color-primary: oklch(72% 0.145 58);
+    --color-primary-content: oklch(20% 0.045 58);
+    --color-secondary: oklch(60% 0.09 84);
+    --color-secondary-content: oklch(15% 0.025 84);
+    --color-accent: oklch(72% 0.08 276);
+    --color-accent-content: oklch(18% 0.03 276);
+    --color-neutral: oklch(88% 0.01 260);
+    --color-neutral-content: oklch(18% 0.01 260);
+    --color-base-100: #10100f;
+    --color-base-200: #171613;
+    --color-base-300: #24211d;
+    --color-base-content: #f3efe7;
     --radius-selector: 0.5rem;
     --radius-field: 0.25rem;
     --radius-box: 0.5rem;
@@ -76,11 +76,77 @@
     --blueprint-logo-size: clamp(1.55rem, 2.4vw, 1.75rem);
   }
 
+  .blueprint-frame {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto auto 1fr;
+    height: 100svh;
+    width: min(84vw, 52.75rem);
+    margin-inline: auto;
+    border-inline: 1px dashed var(--color-main-border);
+  }
+
+  .blueprint-frame::before,
+  .blueprint-frame::after {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    width: 100vw;
+    translate: -50% 0;
+    border-top: 1px dashed var(--color-main-border);
+    content: "";
+  }
+
+  .blueprint-frame::before {
+    top: var(--blueprint-top-guide);
+  }
+
+  .blueprint-frame::after {
+    bottom: var(--blueprint-bottom-guide);
+  }
+
+  .blueprint-node {
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+    width: var(--blueprint-node-size);
+    height: var(--blueprint-node-size);
+    border: 1px solid var(--color-main-border);
+    background: var(--color-base-100);
+  }
+
+  .blueprint-node--top-left,
+  .blueprint-node--top-right {
+    top: var(--blueprint-top-guide);
+    translate: -50% -50%;
+  }
+
+  .blueprint-node--bottom-left,
+  .blueprint-node--bottom-right {
+    bottom: var(--blueprint-bottom-guide);
+    translate: -50% 50%;
+  }
+
+  .blueprint-node--top-left,
+  .blueprint-node--bottom-left {
+    left: 0;
+  }
+
+  .blueprint-node--top-right,
+  .blueprint-node--bottom-right {
+    left: 100%;
+  }
+
   @media (max-width: 640px) {
     .blueprint-page {
       --blueprint-top-guide: 2.1rem;
       --blueprint-bottom-guide: 4.4rem;
       --blueprint-gutter: 1rem;
+    }
+
+    .blueprint-frame {
+      width: min(calc(100% - 2rem), 52.75rem);
     }
   }
 }
